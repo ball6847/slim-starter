@@ -8,17 +8,17 @@
  *
  **/
 
-define('DOCUMENT_ROOT', __DIR__.'/public');
+define('__DOCUMENT_ROOT__', __DIR__.'/public');
 
 // ---------------------------------------------------
 
 // absolute path of requested file
-$filename = DOCUMENT_ROOT.$_SERVER['REQUEST_URI'];
+$filename = __DOCUMENT_ROOT__.$_SERVER['REQUEST_URI'];
 
 // serve file as it-is
-if (php_sapi_name() === 'cli-server' && is_file(DOCUMENT_ROOT.$_SERVER['REQUEST_URI'])) {
+if (php_sapi_name() === 'cli-server' && is_file(__DOCUMENT_ROOT__.$_SERVER['REQUEST_URI'])) {
     return false;
 }
 
 // run our application
-require DOCUMENT_ROOT.'/index.php';
+require __DOCUMENT_ROOT__.'/index.php';
