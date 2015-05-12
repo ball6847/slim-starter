@@ -1,3 +1,6 @@
 *.swp
 vendor
 composer.lock
+
+# app specific
+config.local.php
