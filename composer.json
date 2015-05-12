@@ -1,0 +1,9 @@
+{
+  "require": {
+    "slim/slim": "dev-master",
+    "doctrine/dbal": "2.5.1",
+    "doctrine/orm": "2.4.7",
+    "doctrine/migrations": "1.0.*@dev",
+    "mnapoli/php-di": "~4.0"
+  }
+}
