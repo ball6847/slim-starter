@@ -1,25 +1,23 @@
 <?php
 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+require_once __DIR__."/constant.php";
+require_once APPPATH."vendor/autoload.php";
 
 // ---------------------------------------------------
 
-define('APPPATH', __DIR__.'/');
-define('DOCUMENT_ROOT', __DIR__.'/public/');
-
-// ---------------------------------------------------
-
-require APPPATH."vendor/autoload.php";
-
-// read config file
-$config = require APPPATH.'config.php';
+$config = require(APPPATH.'config.php');
 
 if (is_file(APPPATH.'config.local.php')) {
     $config = array_merge_recursive($config, include(APPPATH.'config.local.php'));
 }
 
-// start application
+// ---------------------------------------------------
+
+// bootup doctrine
+require(APPPATH.'doctrine/bootstrap.php');
+
+// ---------------------------------------------------
+
 $app = new Slim\Slim($config);
 
 return $app;

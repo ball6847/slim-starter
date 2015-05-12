@@ -4,3 +4,4 @@ composer.lock
 
 # app specific
 config.local.php
+db.sqlite
