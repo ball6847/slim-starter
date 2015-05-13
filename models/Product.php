@@ -6,11 +6,24 @@
  **/
 class Product
 {
-    /** @Id @Column(type="integer") @GeneratedValue **/
+    /**
+     * @Id 
+     * @Column(type="integer")
+     * @GeneratedValue
+     **/
     protected $id;
 
-    /** @Column(type="string") **/
+    /**
+     * @Column(type="string")
+     **/
     protected $name;
+
+    /**
+     * @Column(type="text", nullable=true)
+     **/
+    protected $description;
+
+    // ---------------------------------------------------
 
     public function getId()
     {
@@ -25,5 +38,15 @@ class Product
     public function setName($name)
     {
         $this->name = $name;
+    }
+
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    public function setDescription($description)
+    {
+        $this->description = $description;
     }
 }
