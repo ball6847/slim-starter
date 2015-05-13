@@ -13,12 +13,11 @@ if (is_file(APPPATH.'config.local.php')) {
 
 // ---------------------------------------------------
 
-// bootup doctrine
-require(APPPATH.'doctrine/bootstrap.php');
-
-// ---------------------------------------------------
+// we need $doctrine DoctrineMiddleware object, required for later setup in cli-config.php
+$doctrine = new Jgut\Slim\Middleware\DoctrineMiddleware();
 
 $app = new Slim\Slim($config);
+$app->add($doctrine);
 
 return $app;
 

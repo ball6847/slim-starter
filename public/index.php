@@ -1,9 +1,11 @@
 <?php
 
-$app = require(__DIR__.'/../bootstrap.php');
+$app = require(__DIR__.'/../application.php');
 
-$app->get('/', function() use ($entityManager) {
-    $products = $entityManager->getRepository('Product')->findAll();
+$app->get('/', function() use ($app) {
+    $products = $app->entityManager->getRepository('Product');
+    
+    $products = $products->findAll();
 
     var_dump($products);
 });

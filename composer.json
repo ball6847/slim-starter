@@ -4,8 +4,15 @@
     "doctrine/dbal": "2.5.1",
     "doctrine/orm": "2.4.7",
     "doctrine/migrations": "dev-master",
-    "mnapoli/php-di": "~4.0"
+    "mnapoli/php-di": "~4.0",
+    "juliangut/slim-doctrine-middleware": "dev-master"
   },
+  "repositories" : [
+    {
+      "type": "vcs",
+      "url": "https://github.com/ball6847/slim-doctrine-middleware.git"
+    }
+  ],
   "autoload": {
     "psr-0": {
       "": "models/"

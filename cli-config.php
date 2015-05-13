@@ -2,6 +2,13 @@
 
 use Doctrine\ORM\Tools\Console\ConsoleRunner;
 
-require __DIR__.'/doctrine/bootstrap.php';
+// load Slim application, we need $doctrine DoctrineMiddleware
+require(__DIR__."/application.php");
 
-return ConsoleRunner::createHelperSet($entityManager);
+// setup middleware
+$doctrine->setup();
+
+// create entityManager
+$em = $doctrine->createEntityManager();
+
+return ConsoleRunner::createHelperSet($em);
