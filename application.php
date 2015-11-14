@@ -20,4 +20,3 @@ $app = new Slim\Slim($config);
 $app->add($doctrine);
 
 return $app;
-

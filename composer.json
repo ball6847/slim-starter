@@ -1,6 +1,6 @@
 {
   "require": {
-    "slim/slim": "dev-master",
+    "slim/slim": "2.6.2",
     "doctrine/dbal": "2.5.1",
     "doctrine/orm": "2.4.7",
     "doctrine/migrations": "dev-master",
@@ -9,13 +9,24 @@
   },
   "repositories" : [
     {
-      "type": "vcs",
-      "url": "https://github.com/ball6847/slim-doctrine-middleware.git"
+      "type":"package",
+      "package": {
+        "name": "juliangut/slim-doctrine-middleware",
+        "version":"master",
+        "source": {
+          "url": "https://github.com/ball6847/slim-doctrine-middleware.git",
+          "type": "git",
+          "reference":"master"
+        }
+      }
     }
   ],
   "autoload": {
     "psr-0": {
       "": "models/"
+    },
+    "psr-4": {
+      "Jgut\\Slim\\Middleware\\": "vendor/juliangut/slim-doctrine-middleware/src/"
     }
   }
 }
