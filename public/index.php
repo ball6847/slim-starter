@@ -4,7 +4,7 @@ use Psr\Http\Message\ResponseInterface as Response;
 use Slim\Exception\NotFoundException;
 use Doctrine\Common\Persistence\Mapping\MappingException;
 
-$app = require(__DIR__.'/../application.php');
+$app = require(__DIR__.'/../app/bootstrap.php');
 
 // -----------------------------------------------------
 // handle GET /entity

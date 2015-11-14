@@ -8,7 +8,7 @@
  *
  **/
 
-define('__DOCUMENT_ROOT__', __DIR__.'/public');
+define('__DOCUMENT_ROOT__', __DIR__.'/../public');
 
 // ---------------------------------------------------
 

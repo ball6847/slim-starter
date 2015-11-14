@@ -1,7 +1,7 @@
 <?php
 
 require_once __DIR__."/constant.php";
-require_once APPPATH."vendor/autoload.php";
+require_once APPPATH."../vendor/autoload.php";
 
 // ---------------------------------------------------
 
