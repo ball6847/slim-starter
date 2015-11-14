@@ -13,10 +13,10 @@ if (is_file(APPPATH.'config.local.php')) {
 
 // ---------------------------------------------------
 
-// we need $doctrine DoctrineMiddleware object, required for later setup in cli-config.php
-$doctrine = new Jgut\Slim\Middleware\DoctrineMiddleware();
+$container = new Slim\Container($config);
 
-$app = new Slim\Slim($config);
-$app->add($doctrine);
+$container['doctrine'] = function ($container) {
+    return Jgut\Slim\Middleware\DoctrineMiddleware::createEntityManager($container);
+};
 
-return $app;
+return new Slim\App($container);
