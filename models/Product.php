@@ -1,13 +1,18 @@
 <?php
+namespace Model;
+
+use Library\EntityHelper;
 
 /**
- * @Entity 
+ * @Entity
  * @Table(name="products")
  **/
 class Product
 {
+    use EntityHelper;
+
     /**
-     * @Id 
+     * @Id
      * @Column(type="integer")
      * @GeneratedValue
      **/

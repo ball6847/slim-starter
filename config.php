@@ -11,5 +11,8 @@ return [
                 APPPATH.'models'
             ]
         ]
+    ],
+    'settings' => [
+        'displayErrorDetails' => true
     ]
 ];

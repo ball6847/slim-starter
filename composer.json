@@ -23,10 +23,9 @@
     }
   ],
   "autoload": {
-    "psr-0": {
-      "": "models/"
-    },
     "psr-4": {
+      "Model\\": "models/",
+      "Library\\": "library/",
       "Jgut\\Slim\\Middleware\\": "vendor/juliangut/slim-doctrine-middleware/src/"
     }
   }
