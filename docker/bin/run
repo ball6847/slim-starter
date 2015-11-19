@@ -1,0 +1,25 @@
+#!/bin/bash
+
+cd $(dirname $0)/../..
+
+docker rm -f slim-nginx slim-mysql > /dev/null 2>&1
+
+# run mysql container
+docker run -d \
+    --name slim-mysql \
+    -e MYSQL_USER=admin \
+    -e MYSQL_PASS=123456 \
+    -e ON_CREATE_DB=slim_starter \
+    tutum/mysql > /dev/null
+
+# run nginx container
+docker run -d \
+    --name slim-nginx \
+    -v $PWD/docker/nginx/nginx.conf:/etc/nginx/nginx.conf \
+    -v $PWD/docker/nginx/fastcgi.conf:/etc/nginx/fastcgi.conf \
+    -v $PWD/docker/nginx/default.conf:/etc/nginx/conf.d/default.conf \
+    -v $PWD/docker/bin/nginx-entrypoint.sh:/entrypoint.sh \
+    -v $PWD/docker/etc/php/php.ini:/usr/local/etc/php/php.ini \
+    -v $PWD:/var/www \
+    --link slim-mysql:mysql \
+    ball6847/edge-docker-php > /dev/null

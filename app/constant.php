@@ -1,4 +1,5 @@
 <?php
 
 define('APPPATH', __DIR__.'/');
-define('DOCUMENT_ROOT', __DIR__.'/../public/');
+define('BASEPATH', dirname(__DIR__).'/');
+define('DOCUMENT_ROOT', BASEPATH.'public/');

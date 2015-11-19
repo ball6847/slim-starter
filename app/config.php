@@ -4,11 +4,14 @@ return [
     'config' => [
         'doctrine' => [
             'connection' => [
-                'driver' => 'pdo_sqlite',
-                'path' => APPPATH.'../db.sqlite',
+                'driver'   => 'pdo_mysql',
+                'host'     => 'mysql',
+                'dbname'   => 'slim_starter',
+                'user'     => 'admin',
+                'password' => '123456'
             ],
             'annotation_paths' => [
-                APPPATH.'models'
+                BASEPATH.'models'
             ]
         ]
     ],
